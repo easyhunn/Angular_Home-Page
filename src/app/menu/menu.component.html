@@ -1,0 +1,126 @@
+<div id="0" class="box">
+  <div class="container">
+    <div class="row">
+      <div class="img-box" (click)="move(0, 'home', 'pc')">
+        <img src="./../../assets/logo.png" alt="">
+      </div>
+      <div class="nav-box">
+        <div class="item">
+          <span (click)="move(0, 'home', 'pc')">{{translations.menu.menu_title_1 | translate }}</span>
+        </div>
+        <div class="item">
+          <span (click)="moveType(9, 'solutions')">{{translations.menu.menu_title_2 | translate }}</span>
+          <div class="item-hover-box" [ngClass]="{'not-en': langNotEn}">
+            <!-- <div class="item-hover" (click)="move(8, 'about', 'pc')">{{translations.nav.menu_2_3 | translate }}</div> -->
+            <div class="item-hover" (click)="move(10, 'solutions', 'pc')">{{translations.menu.menu_info_2_1 | translate }}</div>
+            <div class="item-hover" (click)="move(12, 'solutions', 'pc')">{{translations.menu.menu_info_2_2 | translate }}</div>
+            <div class="item-hover" (click)="move(11, 'solutions', 'pc')">{{translations.menu.menu_info_2_3 | translate }}</div>
+            <div class="item-hover" (click)="move(4, 'solutions', 'pc')">{{translations.menu.menu_info_2_4 | translate }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <span (click)="moveType(13, 'partners')">{{translations.menu.menu_title_3 | translate }}</span>
+          <div class="item-hover-box" [ngClass]="{'not-en': langNotEn}">
+            <div class="item-hover" (click)="move(14, 'partners', 'pc')">{{translations.menu.menu_info_3_1 | translate }}</div>
+            <div class="item-hover" (click)="move(4, 'partners', 'pc')">{{translations.menu.menu_info_3_2 | translate }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <span (click)="moveType(6, 'about')">{{translations.menu.menu_title_4 | translate }}</span>
+          <div class="item-hover-box" [ngClass]="{'not-en': langNotEn}">
+            <div class="item-hover" (click)="move(7, 'about', 'pc')">{{translations.menu.menu_info_4_1 | translate }}</div>
+            <div class="item-hover" (click)="move(16, 'about', 'pc')">{{translations.menu.menu_info_4_2 | translate }}</div>
+          </div>
+        </div>
+        <div class="item contact" (click)="popPopContact()">
+          <span>{{translations.menu.menu_title_5 | translate }}</span>
+        </div>
+        <div class="item">
+          <div class="lang-img-box">
+            <img src="./../../assets/icon/ic_global.png" alt="">
+          </div>
+          <ng-container *ngIf="!langCurrent">
+            <span>English</span>
+          </ng-container>
+          <ng-container *ngIf="langCurrent">
+            <span *ngIf="langCurrent?.lang === 'en'">English</span>
+            <span *ngIf="langCurrent?.lang === 'zh-cn'">简体中文</span>
+            <span *ngIf="langCurrent?.lang === 'zh-tw'">繁體中文</span>
+          </ng-container>
+          <div class="item-hover-box lang">
+            <div class="item-hover" [ngClass]="{'active': translations.langType.lang === 'en'}" (click)="callLanguage('en')">English</div>
+            <div class="item-hover" [ngClass]="{'active': translations.langType.lang === 'zh-cn'}" (click)="callLanguage('zh-cn')">简体中文</div>
+            <div class="item-hover" [ngClass]="{'active': translations.langType.lang === 'zh-tw'}" (click)="callLanguage('zh-tw')">繁體中文</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobileMenu" [class.active]="isMenu" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div id="nav-mobile" [ngClass]="{'hide': closeMenu, 'active': isMenu}">
+        <a (click)="move(0, 'home', 'mobile')" [ngClass]="{'active': isShow === 0 && mobileInfoMenu}">
+          <span class="font-montserrat-bold">{{translations.menu.menu_title_1 | translate }}</span>
+          <!-- <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt=""> -->
+        </a>
+        <!-- <ul class="item-moible-box" [ngClass]="{'active': isShow === 0 && mobileInfoMenu}">
+          <li class="item-moible font-montserrat" (click)="move(2, 'solutions', 'mobile')">Web Performance</li>
+        </ul> -->
+        <a (click)="mobileNav(1)" [ngClass]="{'active': isShow === 1 && mobileInfoMenu}">
+          <span class="font-montserrat-bold">{{translations.menu.menu_title_2 | translate }}</span>
+          <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt="">
+        </a>
+        <ul class="item-moible-box" [ngClass]="{'active': isShow === 1 && mobileInfoMenu}">
+          <li class="item-moible font-montserrat" (click)="move(10, 'solutions', 'mobile')">{{translations.menu.menu_info_2_1 | translate }}</li>
+          <li class="item-moible font-montserrat" (click)="move(12, 'solutions', 'mobile')">{{translations.menu.menu_info_2_2 | translate }}</li>
+          <li class="item-moible font-montserrat" (click)="move(11, 'solutions', 'mobile')">{{translations.menu.menu_info_2_3 | translate }}</li>
+          <li class="item-moible font-montserrat" (click)="move(4, 'solutions', 'mobile')">{{translations.menu.menu_info_2_4 | translate }}</li>
+        </ul>
+        <a (click)="mobileNav(2)" [ngClass]="{'active': isShow === 2 && mobileInfoMenu}">
+          <span class="font-montserrat-bold">{{translations.menu.menu_title_3 | translate }}</span>
+          <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt="">
+        </a>
+        <ul class="item-moible-box" [ngClass]="{'active': isShow === 2 && mobileInfoMenu}">
+          <li class="item-moible font-montserrat" (click)="move(14, 'partners', 'mobile')">{{translations.menu.menu_info_3_1 | translate }}</li>
+          <li class="item-moible font-montserrat" (click)="move(4, 'partners', 'mobile')">{{translations.menu.menu_info_3_2 | translate }}</li>
+        </ul>
+        <a (click)="mobileNav(3)" [ngClass]="{'active': isShow === 3 && mobileInfoMenu}">
+          <span class="font-montserrat-bold">{{translations.menu.menu_title_4 | translate }}</span>
+          <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt="">
+        </a>
+        <ul class="item-moible-box" [ngClass]="{'active': isShow === 3 && mobileInfoMenu}">
+          <li class="item-moible font-montserrat" (click)="move(7, 'about', 'mobile')">{{translations.menu.menu_info_4_1 | translate }}</li>
+          <li class="item-moible font-montserrat" (click)="move(16, 'about', 'mobile')">{{translations.menu.menu_info_4_2 | translate }}</li>
+        </ul>
+        <ul class="item-moible-box" [ngClass]="{'active': isShow === 5 && mobileInfoMenu}">
+          <li class="item-moible lang" [ngClass]="{'active': translations.langType.lang === 'en'}" (click)="callLanguage('en')">English</li>
+          <li class="item-moible lang" [ngClass]="{'active': translations.langType.lang === 'zh-cn'}" (click)="callLanguage('zh-cn')">简体中文</li>
+          <li class="item-moible lang" [ngClass]="{'active': translations.langType.lang === 'zh-tw'}" (click)="callLanguage('zh-tw')">繁體中文</li>
+        </ul>
+        <a (click)="mobileNav(5)" [ngClass]="{'active': isShow === 5 && mobileInfoMenu}">
+          <div class="lang-img-box-moible">
+            <div class="lang-img-box">
+              <img src="./../../assets/icon/ic_global.png" alt="">
+            </div>
+            <ng-container *ngIf="!langCurrent">
+              <span class="font-montserrat-bold">English</span>
+            </ng-container>
+            <ng-container *ngIf="langCurrent">
+              <span *ngIf="langCurrent?.lang === 'en'" class="font-montserrat-bold">English</span>
+              <span *ngIf="langCurrent?.lang === 'zh-cn'" class="font-montserrat-bold">简体中文</span>
+              <span *ngIf="langCurrent?.lang === 'zh-tw'" class="font-montserrat-bold">繁體中文</span>
+            </ng-container>
+          </div>
+          <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt="">
+        </a>
+        <!-- <a (click)="move(16, 'contact', 'mobile')" [ngClass]="{'active': isShow === 4 && mobileInfoMenu}">
+          <span class="font-montserrat-bold">{{translations.nav.menu_5_0 | translate }}</span>
+          <img [ngClass]="{'rotate': mobileInfoMenu}" src="./../../assets/icon/menu_icon.png" alt="">
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+:host {
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 35px;
+  /* border-radius: 15px; */
+  color: #000;
+  /* background: linear-gradient(0deg, #FF6227 0%, #D20900 100%); */
+  border: 2px solid #f98202;
+  box-shadow: 1px 2px 5px 4px #0000000a, 1px 2px 3px 2px #0000000a;
+  background: white;
+}
+p {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    padding-top: 1px;
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 0.9rem;
+    // color: #fff;
+    border-radius: 100%;
+    // font-family: "Font Awesome 5 Free";
+    // font-weight: 900;
+    background-size: 10px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

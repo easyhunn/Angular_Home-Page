@@ -1,0 +1,48 @@
+<app-card class="m-auto">
+  <app-card-body>
+    <div class="close" (click)="close()">
+      <img src="./../../../assets/icon/close.png" alt="">
+    </div>
+    <div class="form-box">
+      <div class="form-page">
+        <div class="title">
+          {{translations.about.about_8 | translate }}
+        </div>
+        <div class="info">{{translations.about.about_9 | translate }}</div>
+      </div>
+      <div class="form-content">
+        <div class="form-info" >
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_9 | translate }}*</div>
+            <input [ngClass]="{'check': checkFirstName}" type="text" [(ngModel)]="firstName" autocomplete="off" placeholder="" type="text">
+            <div *ngIf="checkFirstName" class="check-info">*{{translations.partners.partners_info_16 | translate }}</div>
+          </div>
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_10 | translate }}*</div>
+            <input [ngClass]="{'check': checkLastName}" type="text" [(ngModel)]="lastName" autocomplete="off" placeholder="" type="text">
+            <div *ngIf="checkLastName" class="check-info">*{{translations.partners.partners_info_16 | translate }}.</div>
+          </div>
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_11 | translate }}</div>
+            <input type="text" [(ngModel)]="companyName" autocomplete="off" placeholder="" type="text">
+          </div>
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_12 | translate }}</div>
+            <input type="text" [(ngModel)]="phone" autocomplete="off" placeholder="" type="number">
+          </div>
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_13 | translate }}*</div>
+            <input [ngClass]="{'check': checkMail}" type="text" [(ngModel)]="mail" autocomplete="off" placeholder="">
+            <div *ngIf="checkMail" class="check-info">*{{translations.partners.partners_info_16 | translate }}</div>
+          </div>
+          <div class="input-box">
+            <div class="input-title">{{translations.partners.partners_info_14 | translate }}*</div>
+            <textarea [ngClass]="{'check': checkMessage}" [(ngModel)]="message" cols="20" rows="5"></textarea>
+            <div *ngIf="checkMessage" class="check-info">*{{translations.partners.partners_info_16 | translate }}</div>
+          </div>
+          <div class="btn-box" (click)="send()">{{translations.partners.partners_info_15 | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </app-card-body>
+</app-card>

@@ -1,0 +1,117 @@
+<!-- Speedy Security -->
+<div id="1" class="box_1">
+  <div class="container">
+    <div class="row" data-aos="fade-right" data-aos-duration="1300">
+      <div class="title-box">
+        <div class="title">{{translations.home_1.row1_1 | translate }}</div>
+        <div class="title">{{translations.home_1.row1_2 | translate }}</div>
+      </div>
+      <div class="info-box font-montserrat">{{translations.home_1.row1_3 | translate }}</div>
+      <div class="contact-box font-montserrat-bold" (click)="popPopContact()">{{translations.home_1.row1_4 | translate }}</div>
+      <div class="scroll-down font-montserrat-bold" (click)="move(2)">
+        <div>{{translations.home_1.row1_5 | translate }}</div>
+        <img src="./../../assets/icon/scroll-down.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Service for All -->
+<div id="2" class="box_2">
+  <div class="container">
+    <div class="row">
+      <div class="title-box">
+        <div class="title font-montserrat-bold">{{translations.home.home_info_2_1 | translate }}</div>
+        <div class="info font-montserrat">{{translations.home.home_info_2_2 | translate }}</div>
+      </div>
+      <div class="img-content" data-aos="fade-up" data-aos-duration="1300">
+        <div class="img-content-box">
+          <div class="img-box">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_2_1.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_2_3 | translate }}</div>
+            </div>
+            <div class="info-detail font-montserrat">{{translations.home.home_detail_2_1 | translate }}</div>
+          </div>
+          <div class="img-box">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_2_2.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_2_4 | translate }}</div>
+            </div>
+            <div class="info-detail font-montserrat">{{translations.home.home_detail_2_2 | translate }}</div>
+          </div>
+          <div class="img-box">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_2_3.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_2_6 | translate }}</div>
+            </div>
+            <div class="info-detail font-montserrat">{{translations.home.home_detail_2_3 | translate }}</div>
+          </div>
+          <div class="img-box">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_2_4.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_2_8 | translate }}</div>
+            </div>
+            <div class="info-detail font-montserrat">{{translations.home.home_detail_2_4 | translate }}</div>
+          </div>
+        </div>
+        <div class="public-btn" [routerLink]="'/partners/14'">{{translations.more | translate }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Service -->
+<div id="3" class="box_3">
+  <div class="container">
+    <div class="row">
+      <div class="title-box">
+        <div class="title font-montserrat-bold">{{translations.home.home_title_3_1 | translate }}</div>
+      </div>
+      <div class="img-content">
+        <div class="img-content-box">
+          <div class="img-box" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1300">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_product_icon_1.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_3_1 | translate }}</div>
+              <div class="info-detail font-montserrat">{{translations.home.home_detail_3_1 | translate }}</div>
+            </div>
+            <div class="public-btn btn-moible" [routerLink]="'/solutions/10'">{{translations.more | translate }}</div>
+          </div>
+          <div class="img-box" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1300">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_product_icon_2.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_3_2 | translate }}</div>
+              <div class="info-detail font-montserrat">{{translations.home.home_detail_3_2 | translate }}</div>
+            </div>
+            <div class="public-btn btn-moible" [routerLink]="'/solutions/12'">{{translations.more | translate }}</div>
+          </div>
+          <div class="img-box" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1300">
+            <div class="top">
+              <div class="img">
+                <img src="./../../assets/icon/home_product_icon_3.png" alt="">
+              </div>
+              <div class="info">{{translations.home.home_info_3_3 | translate }}</div>
+              <div class="info-detail font-montserrat">{{translations.home.home_detail_3_3 | translate }}</div>
+            </div>
+            <div class="public-btn btn-moible" [routerLink]="'/solutions/11'">{{translations.more | translate }}</div>
+          </div>
+          <div class="public-btn btn-moible mobile-show" (click)="moveUrl()">{{translations.more | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-common-contact></app-common-contact>

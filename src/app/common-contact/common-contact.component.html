@@ -1,0 +1,26 @@
+<!-- Cooperation Brand -->
+<div id="4" class="box_4 page">
+  <div class="container">
+    <div class="row">
+      <div class="title-box">
+        <div class="title font-montserrat-bold">{{translations.home.home_info_4_1 | translate }}</div>
+        <div class="brand-info font-montserrat">{{translations.home.home_info_4_2 | translate }}</div>
+      </div>
+      <div class="img-content">
+        <div class="img-content-box">
+          <div class="product-box">
+            <div *ngFor="let item of socailLogoItem; let idx = index" class="product-item">
+              <img *ngIf="idx !== 19" [src]="'./../../assets/icon/' + item.url + '.png'" alt="">
+              <img *ngIf="idx === 19" (click)="popPopContact()" [src]="'./../../assets/icon/' + item.url + '.png'" alt=""
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1200"
+                >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

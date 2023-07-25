@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.75rem;
+  font-size: 22px;
+  ::ng-deep i {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}

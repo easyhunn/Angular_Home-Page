@@ -1,0 +1,123 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@font-face {
+  font-family: "montserrat";
+  src: url("./assets/font/montserrat.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat_bold";
+  src: url("./assets/font/montserrat_bold.ttf");
+  font-style: normal;
+}
+
+.font-montserrat{
+  font-family: montserrat;
+}
+.font-montserrat-bold{
+  font-family: montserrat_bold;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+}
+.info-color{
+  color: #959595;
+}
+
+.public-btn{
+  margin: 20px auto;
+  width: 150px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 28px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom, #FF6227, #D20900);
+  font-family: montserrat_bold;
+  cursor: pointer;
+  &:hover{
+    background: linear-gradient(to top, #FF6227, #D20900);
+  }
+}
+
+.scroll-down{
+  img{
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// fade效果
+.aos-show{
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing{
+  background: #0000006b;
+}
+
+.cdk{
+  box-shadow: 1px 1px 4px #00000063;
+  width: 150px;
+  height: 50px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #ffff;
+  z-index: 111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@media only screen and (max-width: 1280px) {
+  .container{
+    max-width: 1140px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container{
+    max-width: 960px;
+  }
+  .page{
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container{
+    max-width: 720px;
+  }
+  .page{
+    padding-top: 70px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container{
+    max-width: 540px;
+  }
+  .public-btn{
+    width: 130px;
+    font-size: 14px;
+    padding: 5px;
+  }
+  .scroll-down{
+    font-size: .8rem;
+  }
+}
